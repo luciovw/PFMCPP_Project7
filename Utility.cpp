@@ -106,3 +106,4 @@ void useAttackItem(Character*, Item* item)
         //dragons don't carry attack items!
     }
 }
+
