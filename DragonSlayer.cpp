@@ -20,7 +20,7 @@ void DragonSlayer::attack(Character& other)
     std::cout << name << " is attacking " << other.getName() << " !!" << std::endl;
     if( auto* dragon = dynamic_cast<Dragon*>(&other) )
     {
-        assert(false);
+        //assert(false);
         //DragonSlayers get a 10x boost when attacking dragons, from their attack item.
         //so they should USE their attack item before attacking the dragon... 
         //note that items are single-use only, so you need to reset it after use.  

@@ -14,10 +14,11 @@ const std::string& Dwarf::getName()
     return name;
 }
 
-//Dwarf::getStats
+//Dwarf::getStats 
 
 std::string Dwarf::getStats()
 {
+    //from Utility
     return getCharacterStats(this);
 }
 

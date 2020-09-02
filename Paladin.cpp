@@ -10,14 +10,14 @@ Character(health_,armor_, 10), name(name_)
 
 // Paladin::getName
 
-const std::string& Paladin::getName() override
+const std::string& Paladin::getName()
 {
     return name;
 }
 
 // Paladin::getStats
 
-std::string Paladin::getStats() override
+std::string Paladin::getStats()
 {
     return getCharacterStats(this);
 }
