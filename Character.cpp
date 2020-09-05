@@ -86,8 +86,24 @@ int Character::takeDamage(int damage)
     return hitPoints;
 }
 
+void Character::lvlUpStat(int& initialValue, int& stat)
+{
+   if (stat < initialValue)
+    {
+        stat = initialValue;
+    }
+    stat += stat * 0.10;
+    initialValue = stat;
+}
 
-#include <assert>
+void Character::lvlUpChar()
+{
+    lvlUpStat(*initialArmorLevel, armor);
+    lvlUpStat(*initialHitPoints, hitPoints);
+    lvlUpStat(*initialAttackDamage, attackDamage);
+}
+
+//#include <assert>
 void Character::attackInternal(Character& other)
 {
     if( other.hitPoints <= 0 )
@@ -98,20 +114,23 @@ void Character::attackInternal(Character& other)
             b) your stats are boosted 10%
             c) the initial value of your stats is updated to reflect this boosted stat for the next time you defeat another character.
       */
-        assert(false);
+
+        lvlUpChar();
+         
+        //assert(false);
         std::cout << getName() << " defeated " << other.getName() << " and leveled up!" << std::endl;        
     }
 }
 
-void Character::printStats()
-{
-    std::cout << getName() << "'s stats: " << std::endl;
-    assert(false);
-    /*
-    make your getStats() use a function from the Utility.h
-    */
-    std::cout << getStats(); 
+// void Character::printStats()
+// {
+//     std::cout << getName() << "'s stats: " << std::endl;
+//     //assert(false);
+//     /*
+//     make your getStats() use a function from the Utility.h
+//     */
+//     std::cout << getStats(); 
     
-    std::cout << std::endl;
-    std::cout << std::endl;
-}
+//     std::cout << std::endl;
+//     std::cout << std::endl;
+// }
